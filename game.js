@@ -12,7 +12,7 @@ const game = prompt(`
 ・吉村先生\n
 ・ふーちん\n
 ・satsukizzz\n
-・○○ックマ\n
+・○○ックマ (○は漢数字ではなく記号)\n
 推奨環境：PC全画面表示`);
 let btnText1 = null;
 let btnText2 = null;
@@ -71,14 +71,18 @@ const body = document.getElementsByTagName('body')[0];
 
 function gameStart () {
   const num = Math.floor( Math.random() * btnHtml.length);
-  btnHtml[num] = `<button onmousedown="honmono()">${btnText1}</button>`;
+  btnHtml[num] = `<button onmousedown="honmono()" id="honmono">${btnText1}</button>`;
   body.innerHTML = btnHtml.join(' ');
 }
 gameStart();
 
+const seikai = document.getElementById('honmono');
+
 function gameFinish() {
-  open("https://www.nnn.ed.nico", "_blank");
-  location.href = "https://slack.com/intl/ja-jp/";
+  seikai.style.border = '5px solid #00f'
+  window.setTimeout(function(){
+    location.href = "https://www.nnn.ed.nico";
+  }, 5000);
 }
 
 window.setTimeout(function(){
@@ -111,7 +115,7 @@ let failNum = 0;
 function nise () {
   alert(`ニセモノだよ！(間違いは3回までだよ！)`);
   failNum++;
-  alert(`もう、${failNum}回失敗したよ！`);
+  alert(`チャンスはあと${3 - failNum}回だよ！！`);
   console.log(`${failNum}回失敗したよ！`);
   if(failNum >= 3) {
     alert(`終了ーー！残念！\nまた遊びに来てね～(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！`);
