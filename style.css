@@ -14,3 +14,10 @@ button:hover {
 button:active {
   background: #555;
 }
+
+select {
+  padding: 10px;
+  width: 140px;
+  height: 3rem;
+  margin: 5px;
+}
