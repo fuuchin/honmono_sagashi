@@ -8,7 +8,8 @@ const game = prompt(`
 ・小枝先生\n
 ・折原先生\n
 ・らべねこ先生\n
-・吉村先生`);
+・吉村先生\n
+推奨環境：PC全画面表示`);
 let btnText1 = null;
 let btnText2 = null;
 
