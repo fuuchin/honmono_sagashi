@@ -12,6 +12,7 @@ const game = prompt(`
 ・吉村先生\n
 ・ふーちん\n
 ・satsukizzz\n
+・○○ックマ\n
 推奨環境：PC全画面表示`);
 let btnText1 = null;
 let btnText2 = null;
@@ -43,10 +44,15 @@ switch(game) {
     btnText2 = [`ぷーちん`, `ふちきん`, `ふっちん`, `ふ＝ちん`, `ふ～ちん`, `ふーさん`];
     break;
 
-    case `satsukizzz`:
-      btnText1 = `satsukizzz`;
-      btnText2 = [`salsukizzz`, `satsukizz`, `satsukizzzz`, `satzukizzz`, `satsuklzzz`, `setsukizzz`];
-      break;
+  case `satsukizzz`:
+    btnText1 = `satsukizzz`;
+    btnText2 = [`salsukizzz`, `satsukizz`, `satsukizzzz`, `satzukizzz`, `satsuklzzz`, `setsukizzz`];
+    break;
+
+  case `○○ックマ`:
+    btnText1 = `○○ックマ`;
+    btnText2 = [`&star;&star;ックマ`, `&xutri;&xutri;ックマ`, `&boxbox;&boxbox;ックマ`, `&blk12;&blk12;ックマ`, `&block;&block;ックマ`, `&phone;&phone;ックマ`, `&yen;&yen;ックマ`, `○○ッタマ`, `wwックマ`];
+    break;
 
   default:
     btnText1 = `小枝先生`;
