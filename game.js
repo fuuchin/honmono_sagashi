@@ -7,9 +7,8 @@ body.innerHTML = `
 <p>推奨環境：PC全画面表示</p>
 <p>
   正しい人の名前を探すゲームで、ダミーがいっぱいあるんだ！！<br>
-  制限時間は2分！！<br>
-  どの人がいいかな？次のリストから入力してね！！<br>
-  キャンセルを押したり、リスト外のものが入力されたときは、自動的に小枝先生になるよ！<br>
+  制限時間は2分！！ちなみにもう時間制限のタイマーがスタートしているから、<br>
+  どの人がいいか早くセレクトボックスから選んで！！
 </p>
 
 <select>
@@ -24,12 +23,10 @@ body.innerHTML = `
 
 <button onclick="gameStart()"/>スタート</button>
 `
+
 function gameStart () {
-
 const selectForm = document.getElementsByTagName('select')[0];
-
 const index = selectForm.selectedIndex;
-
 const gameName = selectForm.options[index].value;
 
 let btnText1 = null;
@@ -89,6 +86,7 @@ for(let i = 0; i < 154; i++) {
   const num = Math.floor( Math.random() * btnHtml.length);
   btnHtml[num] = `<button onmousedown="honmono()" id="honmono">${btnText1}</button>`;
   body.innerHTML = btnHtml.join(' ');
+
 }
 
 const seikai = document.getElementById('honmono');
