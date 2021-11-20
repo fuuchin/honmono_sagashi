@@ -1,14 +1,16 @@
 'use strict';
 
 const game = prompt(`
-ホンモノ探しゲーム！！8888888888\n
-正しい先生の名前を探すゲームで、ダミーがいっぱいあるんだ！！\n
-どの先生がいいかな？次のリストから入力してね！！\n
+ホンモノ探しゲーム！！88888888888888888888\n
+正しい人の名前を探すゲームで、ダミーがいっぱいあるんだ！！\n
+どの人がいいかな？次のリストから入力してね！！\n
 キャンセルを押したり、リスト外のものが入力されたときは、自動的に小枝先生になるよ！\n
 ・小枝先生\n
 ・折原先生\n
 ・らべねこ先生\n
 ・吉村先生\n
+・ふーちん\n
+・satsukizzz\n
 推奨環境：PC全画面表示`);
 let btnText1 = null;
 let btnText2 = null;
@@ -33,6 +35,17 @@ switch(game) {
     btnText1 = `吉村先生`;
     btnText2 = [`吉村先生`, `古村先生`, `吉材先生`, `吉林先生`, `吉朽先生`, `吉朾先生`];
     break;
+
+
+  case `ふーちん`:
+    btnText1 = `ふーちん`;
+    btnText2 = [`ぷーちん`, `ふちきん`, `ふっちん`, `ふ＝ちん`, `ふ～ちん`, `ふーさん`];
+    break;
+
+    case `satsukizzz`:
+      btnText1 = `satsukizzz`;
+      btnText2 = [`salsukizzz`, `satsukizz`, `satsukizzzz`, `satzukizzz`, `satsuklzzz`, `setsukizzz`];
+      break;
 
   default:
     btnText1 = `小枝先生`;
