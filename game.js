@@ -56,7 +56,7 @@ switch(game) {
 
 let btnHtml = [];
 for(let i = 0; i < 154; i++) {
-  let btnTag = `<button onclick="nise()">${btnText2[Math.floor( Math.random() * btnText2.length)]}</button>`;
+  let btnTag = `<button onmousedown="nise()">${btnText2[Math.floor( Math.random() * btnText2.length)]}</button>`;
   btnHtml.push(btnTag);
 }
 
@@ -64,7 +64,7 @@ const body = document.getElementsByTagName('body')[0];
 
 function gameStart () {
   const num = Math.floor( Math.random() * btnHtml.length);
-  btnHtml[num] = `<button onclick="honmono()">${btnText1}</button>`;
+  btnHtml[num] = `<button onmousedown="honmono()">${btnText1}</button>`;
   body.innerHTML = btnHtml.join(' ');
 }
 gameStart();
