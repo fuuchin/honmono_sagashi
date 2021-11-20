@@ -113,8 +113,6 @@ window.setTimeout(function(){
   gameFinish();
 }, 120000);
 
-
-
 function honmono () {
   alert(`!(^^)!ピンポーン!(^^)!\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！`);
   gameFinish();
