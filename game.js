@@ -3,6 +3,7 @@
 const game = prompt(`
 ホンモノ探しゲーム！！88888888888888888888\n
 正しい人の名前を探すゲームで、ダミーがいっぱいあるんだ！！\n
+制限時間は2分！！\n
 どの人がいいかな？次のリストから入力してね！！\n
 キャンセルを押したり、リスト外のものが入力されたときは、自動的に小枝先生になるよ！\n
 ・小枝先生\n
@@ -73,6 +74,13 @@ function gameFinish() {
   open("https://www.nnn.ed.nico", "_blank");
   location.href = "https://slack.com/intl/ja-jp/";
 }
+
+window.setTimeout(function(){
+  alert('時間切れ～～！！\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！');
+  gameFinish();
+}, 120000);
+
+
 
 function honmono () {
   alert(`!(^^)!ピンポーン!(^^)!\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！`);
