@@ -82,6 +82,19 @@ function gameFinish() {
 }
 
 window.setTimeout(function(){
+  alert('あと1分～');
+}, 60000);
+
+window.setTimeout(function(){
+  alert('あと30秒！');
+}, 90000);
+
+window.setTimeout(function(){
+  body.style.background = '#f00';
+  alert('あと10秒！！');
+}, 110000);
+
+window.setTimeout(function(){
   alert('時間切れ～～！！\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！');
   gameFinish();
 }, 120000);
@@ -105,3 +118,5 @@ function nise () {
     gameFinish();
   }
 }
+
+// たった1日で作りました。
