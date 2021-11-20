@@ -1,23 +1,41 @@
 'use strict';
 
-const game = prompt(`
-ホンモノ探しゲーム！！88888888888888888888\n
-正しい人の名前を探すゲームで、ダミーがいっぱいあるんだ！！\n
-制限時間は2分！！\n
-どの人がいいかな？次のリストから入力してね！！\n
-キャンセルを押したり、リスト外のものが入力されたときは、自動的に小枝先生になるよ！\n
-・小枝先生\n
-・折原先生\n
-・らべねこ先生\n
-・吉村先生\n
-・ふーちん\n
-・satsukizzz\n
-・○○ックマ (○は漢数字ではなく記号)\n
-推奨環境：PC全画面表示`);
+const body = document.getElementsByTagName('body')[0];
+
+body.innerHTML = `
+<h1>ホンモノ探しゲーム！！88888888888888888888</h1>
+<p>推奨環境：PC全画面表示</p>
+<p>
+  正しい人の名前を探すゲームで、ダミーがいっぱいあるんだ！！<br>
+  制限時間は2分！！<br>
+  どの人がいいかな？次のリストから入力してね！！<br>
+  キャンセルを押したり、リスト外のものが入力されたときは、自動的に小枝先生になるよ！<br>
+</p>
+
+<select>
+    <option value="小枝先生">小枝先生</option>
+    <option value="折原先生">折原先生</option>
+    <option value="らべねこ先生">らべねこ先生</option>
+    <option value="吉村先生">吉村先生</option>
+    <option value="ふーちん">ふーちん</option>
+    <option value="satsukizzz">satsukizzz</option>
+    <option value="○○ックマ">○○ックマ</option>
+</select>
+
+<button onclick="gameStart()"/>スタート</button>
+`
+function gameStart () {
+
+const selectForm = document.getElementsByTagName('select')[0];
+
+const index = selectForm.selectedIndex;
+
+const gameName = selectForm.options[index].value;
+
 let btnText1 = null;
 let btnText2 = null;
 
-switch(game) {
+switch(gameName) {
   case `小枝先生`:
     btnText1 = `小枝先生`;
     btnText2 = [`小技先生`, `子枝先生`, `大技先生`, `小投先生`];
@@ -67,14 +85,11 @@ for(let i = 0; i < 154; i++) {
   btnHtml.push(btnTag);
 }
 
-const body = document.getElementsByTagName('body')[0];
 
-function gameStart () {
   const num = Math.floor( Math.random() * btnHtml.length);
   btnHtml[num] = `<button onmousedown="honmono()" id="honmono">${btnText1}</button>`;
   body.innerHTML = btnHtml.join(' ');
 }
-gameStart();
 
 const seikai = document.getElementById('honmono');
 
