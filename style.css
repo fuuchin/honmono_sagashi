@@ -2,36 +2,15 @@ button {
   width: 140px;
   height: 3rem;
   margin: 5px;
-  animation: btn-anime 700ms infinite;
   color: #000;
   background: #bbb;
 }
 
-@keyframes btn-anime {
-  0% {
-    transform: translate(0, 0);
-    color: #000;
-    background: #bbb;
-  }
+button:hover {
+  background: #eee;
+  color: #000;
+}
 
-  25% {
-    transform: translate(0, 5px);
-    color: #eee;
-  }
-
-  50% {
-    transform: translate(0, 0);
-    color: #000;
-  }
-
-  75% {
-    background: #aaa;
-    transform: translate(5px, 0);
-  }
-
-  100% {
-    transform: translate(0, 0);
-    color: #000;
-    background: #bbb;
-  }
+button:active {
+  background: #555;
 }
