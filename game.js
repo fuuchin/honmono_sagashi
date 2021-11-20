@@ -89,10 +89,7 @@ for(let i = 0; i < 154; i++) {
 
 }
 
-const seikai = document.getElementById('honmono');
-
 function gameFinish() {
-  seikai.style.border = '5px solid #00f'
   window.setTimeout(function(){
     location.href = "https://www.nnn.ed.nico";
   }, 5000);
