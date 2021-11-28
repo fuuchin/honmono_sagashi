@@ -2,135 +2,126 @@
 
 const body = document.getElementsByTagName('body')[0];
 
-body.innerHTML = `
-<h1>ホンモノ探しゲーム！！88888888888888888888</h1>
-<p>推奨環境：PC全画面表示</p>
-<p>
-  正しい人の名前を探すゲームで、ダミーがいっぱいあるんだ！！<br>
-  制限時間は2分！！ちなみにもう時間制限のタイマーがスタートしているから、<br>
-  どの人がいいか早くセレクトボックスから選んで！！(応募した時のゲームの使い方の説明と少し異なります。)
-</p>
-
-<select>
-    <option value="小枝先生">小枝先生</option>
-    <option value="折原先生">折原先生</option>
-    <option value="らべねこ先生">らべねこ先生</option>
-    <option value="吉村先生">吉村先生</option>
-    <option value="ふーちん">ふーちん</option>
-    <option value="satsukizzz">satsukizzz</option>
-    <option value="○○ックマ">○○ックマ</option>
-</select>
-
-<button onclick="gameStart()"/>スタート</button>
-`
 
 function gameStart () {
-const selectForm = document.getElementsByTagName('select')[0];
-const index = selectForm.selectedIndex;
-const gameName = selectForm.options[index].value;
+  const selectForm = document.getElementsByTagName('select')[0];
+  const index = selectForm.selectedIndex;
+  const gameName = selectForm.options[index].value;
 
-let btnText1 = null;
-let btnText2 = null;
+  let btnText1 = null;
+  let btnText2 = null;
 
-switch(gameName) {
-  case `小枝先生`:
-    btnText1 = `小枝先生`;
-    btnText2 = [`小技先生`, `子枝先生`, `大技先生`, `小投先生`];
-    break;
+  switch(gameName) {
+    case `小枝先生`:
+      btnText1 = `小枝先生`;
+      btnText2 = [`小技先生`, `子枝先生`, `大技先生`, `小投先生`, `イケメン`];
+      break;
 
-  case `折原先生`:
-    btnText1 = `折原先生`;
-    btnText2 = [`折源先生`, `祈原先生`, `斫原先生`, `斤原先生`, `抗原先生`];
-    break;
+    case `折原先生`:
+      btnText1 = `折原先生`;
+      btnText2 = [`折源先生`, `祈原先生`, `斫原先生`, `斤原先生`, `抗原先生`, `イケメン`];
+      break;
 
-  case `らべねこ先生`:
-    btnText1 = `らべねこ先生`;
-    btnText2 = [`らべいぬ先生`, `らいおん先生`, `らへねこ先生`, `うべねこ先生`, `らべれこ先生`, `らべわこ先生`];
-    break;
+    case `らべねこ先生`:
+      btnText1 = `らべねこ先生`;
+      btnText2 = [`らべいぬ先生`, `らいおん先生`, `らへねこ先生`, `うべねこ先生`, `らべれこ先生`, `らべわこ先生`];
+      break;
 
-  case `吉村先生`:
-    btnText1 = `吉村先生`;
-    btnText2 = [`吉村先生`, `古村先生`, `吉材先生`, `吉林先生`, `吉朽先生`, `吉朾先生`];
-    break;
-
-
-  case `ふーちん`:
-    btnText1 = `ふーちん`;
-    btnText2 = [`ぷーちん`, `ふちきん`, `ふっちん`, `ふ＝ちん`, `ふ～ちん`, `ふーさん`];
-    break;
-
-  case `satsukizzz`:
-    btnText1 = `satsukizzz`;
-    btnText2 = [`salsukizzz`, `satsukizz`, `satsukizzzz`, `satzukizzz`, `satsuklzzz`, `setsukizzz`];
-    break;
-
-  case `○○ックマ`:
-    btnText1 = `○○ックマ`;
-    btnText2 = [`&star;&star;ックマ`, `&xutri;&xutri;ックマ`, `&boxbox;&boxbox;ックマ`, `&blk12;&blk12;ックマ`, `&block;&block;ックマ`, `&phone;&phone;ックマ`, `&yen;&yen;ックマ`, `○○ッタマ`, `wwックマ`];
-    break;
-
-  default:
-    btnText1 = `小枝先生`;
-    btnText2 = [`小技先生`, `子枝先生`, `大技先生`, `小投先生`];
-    break;
-}
+    case `吉村先生`:
+      btnText1 = `吉村先生`;
+      btnText2 = [`吉村先生`, `古村先生`, `吉材先生`, `吉林先生`, `吉朽先生`, `吉朾先生`];
+      break;
 
 
-let btnHtml = [];
-for(let i = 0; i < 154; i++) {
-  let btnTag = `<button onmousedown="nise()">${btnText2[Math.floor( Math.random() * btnText2.length)]}</button>`;
-  btnHtml.push(btnTag);
-}
+    case `ふーちん`:
+      btnText1 = `ふーちん`;
+      btnText2 = [`ぷーちん`, `ふちきん`, `ふっちん`, `ふ＝ちん`, `ふ～ちん`, `ふーさん`];
+      break;
+
+    case `satsukizzz`:
+      btnText1 = `satsukizzz`;
+      btnText2 = [`salsukizzz`, `satsukizz`, `satsukizzzz`, `satzukizzz`, `satsuklzzz`, `setsukizzz`];
+      break;
+
+    case `kenton116`:
+      btnText1 = `kenton116`;
+      btnText2 = [`kentonll6`, `kanton116`, `kenton110`, `Kenton116`, `kenken116`, `ken&dagger;on116`];
+      break;
+
+    case `BlueZhiaar`:
+      btnText1 = `BlueZhiaar`;
+      btnText2 = [`BlaeZhiaar`, `BlueZh&iexcl;aar`, `PlueZhiaar`, `DlueZhiaar`, `BlueZniaar`, `BlueZhiaan`];
+      break;
+
+    case `○○ックマ`:
+      btnText1 = `○○ックマ`;
+      btnText2 = [`&star;&star;ックマ`, `&xutri;&xutri;ックマ`, `&boxbox;&boxbox;ックマ`, `&blk12;&blk12;ックマ`, `&block;&block;ックマ`, `&phone;&phone;ックマ`, `&yen;&yen;ックマ`, `○○ッタマ`, `wwックマ`];
+      break;
+  }
+
+
+  let btnHtml = [];
+  for(let i = 0; i < 154; i++) {
+    let btnTag = `<button onmousedown="nise()">${btnText2[Math.floor( Math.random() * btnText2.length)]}</button>`;
+    btnHtml.push(btnTag);
+  }
 
 
   const num = Math.floor( Math.random() * btnHtml.length);
   btnHtml[num] = `<button onmousedown="honmono()" id="honmono">${btnText1}</button>`;
   body.innerHTML = btnHtml.join(' ');
 
-}
+  window.setTimeout(function(){
+    alert('あと1分～');
+  }, 60000);
+  
+  window.setTimeout(function(){
+    alert('あと30秒！');
+  }, 90000);
+  
+  window.setTimeout(function(){
+    body.style.background = '#f00';
+    alert('あと10秒！！');
+  }, 110000);
+  
+  window.setTimeout(function(){
+    alert('時間切れ～～！！\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！');
+    gameFinish();
+  }, 120000);
+} // gameStart関数の終わり
 
 function gameFinish() {
+  alert(`あっ！そうだ！`);
+  alert(`プログラミング授業の予習をしよう！\nN予備校のページにジャンプするよ！`);
+
   window.setTimeout(function(){
     location.href = "https://www.nnn.ed.nico";
-  }, 5000);
+  }, 1000);
 }
-
-window.setTimeout(function(){
-  alert('あと1分～');
-}, 60000);
-
-window.setTimeout(function(){
-  alert('あと30秒！');
-}, 90000);
-
-window.setTimeout(function(){
-  body.style.background = '#f00';
-  alert('あと10秒！！');
-}, 110000);
-
-window.setTimeout(function(){
-  alert('時間切れ～～！！\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！5秒後にページが移動するよ！');
-  gameFinish();
-}, 120000);
 
 function honmono () {
-  alert(`!(^^)!ピンポーン!(^^)!\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！5秒後にページが移動するよ！`);
+  alert(`!(^^)!ピンポーン!(^^)!\nまた遊びに来てね！(^^)`);
   gameFinish();
 }
 
-let failNum = 0;
+let failNum = 3;
 
 function nise () {
-  alert(`残念！ニセモノだよ！(間違いは3回までだよ！)`);
-  failNum++;
-  alert(`チャンスはあと${3 - failNum}回だよ！！`);
-  console.log(`${failNum}回失敗したよ！`);
-  if(failNum >= 3) {
-    alert(`終了ーー！残念！\nまた遊びに来てね～(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！5秒後にページが移動するよ！`);
-    gameFinish();
+  alert(`ニセモノだよ！`);
+  failNum--;
+
+  switch(failNum) {
+    case 0:
+      alert(`終了ーー！残念！\nまた遊びに来てね～(^^)`);
+      gameFinish();
+      break;
+
+    default:
+      alert(`チャンスはあと${failNum}回だよ！！`);
+      break;
   }
 }
 
 /** 
- * 1日で作りました。もう少し時間があれば色々変えられたのに...
+ * ほとんど1日で作りました。もう少し時間があれば色々変えられたけど...
 */
