@@ -21,3 +21,10 @@ select {
   height: 3rem;
   margin: 5px;
 }
+
+option {
+  padding: 10px;
+  width: 140px;
+  height: 3rem;
+  margin: 5px;
+}
