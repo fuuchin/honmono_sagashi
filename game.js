@@ -85,7 +85,7 @@ function gameStart () {
   }, 110000);
   
   window.setTimeout(function(){
-    alert('時間切れ～～！！\nまた遊びに来てね！(^^)\nあっ！そうだ！プログラミング授業の予習をしよう！');
+    alert('時間切れ～～！！\nまた遊びに来てね！(^^)');
     gameFinish();
   }, 120000);
 } // gameStart関数の終わり
