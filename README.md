@@ -2,7 +2,7 @@
 
 # ホンモノ探しゲーム
 
-使い方は [本ページ](https://fuuchin.github.io/honmono_sagashi/){:target="_blank"}を見てもらったら大体わかりますが、書いておきます。
+使い方は [本ページ](https://fuuchin.github.io/honmono_sagashi/)を見てもらったら大体わかりますが、書いておきます。
 
 #### 使い方
 
