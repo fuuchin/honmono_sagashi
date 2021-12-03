@@ -57,6 +57,11 @@ function gameStart () {
       btnText1 = `○○ックマ`;
       btnText2 = [`&star;&star;ックマ`, `&xutri;&xutri;ックマ`, `&boxbox;&boxbox;ックマ`, `&blk12;&blk12;ックマ`, `&block;&block;ックマ`, `&phone;&phone;ックマ`, `&yen;&yen;ックマ`, `○○ッタマ`, `wwックマ`];
       break;
+
+    case `野田クリスタル`:
+      btnText1 = `野田クリスタル`;
+      btnText2 = [`野田クリステル`, `野口クリスタル`, `野田クりスタル`, `野田クリスナル`, `野田クリフタル`, `野田クリスタレ`, `野田コリスタル`];
+      break;
   }
 
 
