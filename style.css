@@ -22,9 +22,12 @@ select {
   margin: 5px;
 }
 
-option {
-  padding: 10px;
-  width: 140px;
-  height: 3rem;
-  margin: 5px;
+td, th {
+  padding: 7px;
+  border-bottom: 1px solid #ccc;
+}
+
+.border{
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
