@@ -2,14 +2,13 @@
 
 const body = document.getElementsByTagName('body')[0];
 
-
 function gameStart () {
   const selectForm = document.getElementsByTagName('select')[0];
   const index = selectForm.selectedIndex;
-  const gameName = selectForm.options[index].value;
+  const gameName = selectForm.options[index].value; // セレクトボックスで選ばれた人物名
 
-  let btnText1 = null;
-  let btnText2 = null;
+  let btnText1 = null; // 正解の人物名
+  let btnText2 = null; // ダミーの配列
 
   switch(gameName) {
     case `小枝先生`:
@@ -64,18 +63,20 @@ function gameStart () {
       break;
   }
 
-
   let btnHtml = [];
+  // ダミーの文字列が入った配列からランダムに出す
   for(let i = 0; i < 154; i++) {
     let btnTag = `<button onmousedown="nise()">${btnText2[Math.floor( Math.random() * btnText2.length)]}</button>`;
     btnHtml.push(btnTag);
   }
 
-
+  // ダミーいっぱいの配列のうち、一つだけ本物をランダムに選んで入れる
   const num = Math.floor( Math.random() * btnHtml.length);
   btnHtml[num] = `<button onmousedown="honmono()" id="honmono">${btnText1}</button>`;
   body.innerHTML = btnHtml.join(' ');
 
+  // スタートボタンを押してから何秒経ったかを計ることで、
+  // 残り時間をアラートとして警告する
   window.setTimeout(function(){
     alert('あと1分～');
   }, 60000);
@@ -109,14 +110,14 @@ function honmono () {
   gameFinish();
 }
 
-let failNum = 3;
+let failNum = 3; // 失敗した回数を数えるための変数 失敗は3回まで
 
 function nise () {
   alert(`ニセモノだよ！`);
-  failNum--;
+  failNum--; // ニセモノをクリックするたびにあと何回失敗できるかの数を減らす
 
   switch(failNum) {
-    case 0:
+    case 0: // failNum変数が0に達するということは、3回ニセモノをクリックしたので、ゲームオーバー
       alert(`終了ーー！残念！\nまた遊びに来てね～(^^)`);
       gameFinish();
       break;
