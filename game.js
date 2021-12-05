@@ -61,6 +61,11 @@ function gameStart () {
       btnText1 = `野田クリスタル`;
       btnText2 = [`野田クリステル`, `野口クリスタル`, `野田クりスタル`, `野田クリスナル`, `野田クリフタル`, `野田クリスタレ`, `野田コリスタル`];
       break;
+
+    case `チュートリアル`:
+      btnText1 = `ホンモノ`;
+      btnText2 = [`ニセモノ`, `クセモノ`, `ナマモノ`];
+      break;
   }
 
   let btnHtml = [];
@@ -74,6 +79,19 @@ function gameStart () {
   const num = Math.floor( Math.random() * btnHtml.length);
   btnHtml[num] = `<button onmousedown="honmono()" id="honmono">${btnText1}</button>`;
   body.innerHTML = btnHtml.join(' ');
+
+  // スタートボタンを押して間もないころに、
+  // チュートリアルを表示
+  window.setTimeout(function(){
+    if(btnText1 === `ホンモノ`) {
+      alert(`ニセモノやクセモノ、ナマモノなどが書かれたボタンがたくさんあるね！`);
+      alert(`その中でも、「ホンモノ」と書かれたボタンが1つだけあるんだけど、分かったかな？`);
+      alert(`ほら、あそこ！`);
+      alert(`分かったらそのボタンをクリックしてね！\n「ホンモノ」以外のボタンをクリックしたらダメだよ！！`);
+      alert(`制限時間は2分！！`);
+      alert(`それではスタート！！`);
+    }
+  }, 50);
 
   // スタートボタンを押してから何秒経ったかを計ることで、
   // 残り時間をアラートとして警告する
@@ -99,10 +117,7 @@ function gameStart () {
 function gameFinish() {
   alert(`あっ！そうだ！`);
   alert(`プログラミング授業の予習をしよう！\nN予備校のページにジャンプするよ！`);
-
-  window.setTimeout(function(){
-    location.href = "https://www.nnn.ed.nico";
-  }, 1000);
+  location.href = "https://www.nnn.ed.nico";
 }
 
 function honmono () {
